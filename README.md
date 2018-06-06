@@ -1,15 +1,22 @@
 # Introduction
 
-Author: Sarah Sand
+Instructor: Justin James - https://digitaldrummerj.me/
+Student: Sarah Sand
 Purpose: This project was created during a session at Nebraska Code. The session was "Up and Running with Angular."
 
 # How do I run this application? (for beginners)
 
-Run "npm install" in the project directory; Run "ng serve"; Open http://localhost:4200
+Run "npm install" in the project directory; Run "ng serve"; Open http://localhost:4200; Then, log in as example@gmail.com with password of 123456
 
 # How is this project structured?
 
-The login, authorization, and signup components all use a template-driven form. The todo component uses a model-driven form. According to the course, model-driven is the recommended, much improved method.
+The login, authorization, and signup components all use a template-driven form. The todo component uses a model-driven form. According to the course, model-driven is the recommended, much improved method. "Reactive forms allow you to define the form fields and validation in the component instead of the template."
+
+# Enhancement Ideas
+
+@angular/animations to animate the delete functionality, etc.
+Sort and group list items (e.g. deleted items)
+Store deleted items on a separate screen or gray them out
 
 # Ng2ws
 
