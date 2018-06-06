@@ -16,8 +16,9 @@ const requestOptions = {
 
 export class AuthService {
 
-  private url = `${environment.apiBaseUrl}/login`;
-
+  private urlLogin = `${environment.apiBaseUrl}/login`;
+  private urlUser = `${environment.apiBaseUrl}/user`;
+  private urlUserIdentity = `${environment.apiBaseUrl}/user/identity`;
 
   constructor(private http: HttpClient) {
   }
@@ -28,7 +29,7 @@ export class AuthService {
 
     const loginInfo = { 'email': email, 'password': password };
 
-    return this.http.put(this.url, loginInfo, requestOptions)
+    return this.http.put(this.urlLogin, loginInfo, requestOptions)
       .pipe(
         tap((res: Response) => {
           if (res) {
@@ -48,7 +49,7 @@ export class AuthService {
 
   signup(email: string, password: string): Observable<boolean | Response> {
     const loginInfo = { 'email': email, 'password': password };
-    return this.http.post(this.url, loginInfo, requestOptions)
+    return this.http.post(this.urlUser, loginInfo, requestOptions)
       .pipe(
         tap((res: Response) => {
           if (res) {
@@ -66,7 +67,7 @@ export class AuthService {
 
   isAuthenticated(): Observable<boolean | Response> {
     return this.http
-      .get('https://sails-ws.herokuapp.com/user/identity', requestOptions)
+      .get(this.urlUserIdentity, requestOptions)
       .pipe(
         tap((res: Response) => {
           if (res) {

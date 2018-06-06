@@ -66,7 +66,7 @@
           },
           "configurations": {
             "local": {
-              "browserTarget": "ngws:build:local"
+              "browserTarget": "angular-todo-1:build:local"
             },
             "production": {
               "browserTarget": "ng2ws:build:production"
