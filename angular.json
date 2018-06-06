@@ -32,13 +32,15 @@
             "scripts": []
           },
           "configurations": {
-            "production": {
+            "local": {
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
+                  "with": "src/environments/environment.local.ts"
                 }
-              ],
+              ]
+            },
+            "production": {
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -47,7 +49,13 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true
+              "buildOptimizer": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
             }
           }
         },
@@ -57,6 +65,9 @@
             "browserTarget": "ng2ws:build"
           },
           "configurations": {
+            "local": {
+              "browserTarget": "ngws:build:local"
+            },
             "production": {
               "browserTarget": "ng2ws:build:production"
             }

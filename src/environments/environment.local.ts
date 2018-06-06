@@ -1,5 +1,5 @@
 export const environment = {
-  production: true,
-  environmentName: 'Production',
+  production: false,
+  environmentName: 'Local',
   apiBaseUrl: 'https://sails-ws.herokuapp.com'
 };
