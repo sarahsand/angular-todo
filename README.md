@@ -1,8 +1,15 @@
-#Introduction
+# Introduction
 
 Author: Sarah Sand
 Purpose: This project was created during a session at Nebraska Code. The session was "Up and Running with Angular."
 
+# How do I run this application? (for beginners)
+
+Run "npm install" in the project directory; Run "ng serve"; Open http://localhost:4200
+
+# How is this project structured?
+
+The login, authorization, and signup components all use a template-driven form. The todo component uses a model-driven form. According to the course, model-driven is the recommended, much improved method.
 
 # Ng2ws
 

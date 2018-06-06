@@ -28,6 +28,8 @@ export class LoginComponent implements OnInit {
                 } else {
                     this.invalidLogin = false;
                     console.log('login.component logged in. redirecting to home page');
+                    
+                    //Do not put ANYTHING after router.navigate. You never know if your computer will reach it.
                     this.router.navigate(['/']);
                 }
             });

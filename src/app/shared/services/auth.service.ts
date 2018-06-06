@@ -17,6 +17,7 @@ export class AuthService {
   constructor(private http: HttpClient) {
   }
 
+  //The HTTP call may return a boolean or Response
   login(email: string, password: string): Observable<boolean | Response> {
     console.log('auth.service login');
 
@@ -39,4 +40,22 @@ export class AuthService {
         })
       );
   }
+
+  signup(email: string, password: string): Observable<boolean | Response> {
+    const loginInfo = { 'email': email, 'password': password };
+    return this.http.post("https://sails-ws.herokuapp.com/user/", loginInfo, requestOptions)
+        .pipe(
+            tap((res: Response) => {
+                if (res) {
+                    return of(true);
+                }
+   
+                return of(false);
+            }),
+            catchError((error) => {
+                console.log('signup error', error);
+                return of(false);
+            }),
+        );
+   }
 }
